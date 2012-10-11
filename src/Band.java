@@ -1,21 +1,20 @@
 
-public class Band {
+private class Band {
 
-	//TODO: Besprechen was public oder private
-	public String sName;
-	public String sAusrichtung;
-	public Repertoires oRepertoire;
-	public Termine oTermine;
-	public Mitglieder oMitglieder;
+	private String name;
+	private String ausrichtung;
+	private Repertoires repertoire;
+	private Termine termine;
+	private Mitglieder mitglieder;
 	
 	//Konstruktor
-	public Band (String sName, String sAusrichtung) {
-		this.sName = sName;
-		this.sAusrichtung = sAusrichtung;
+	public Band (String name, String ausrichtung) {
+		this.name = name;
+		this.ausrichtung = ausrichtung;
 		
-		this.oRepertoire = new Repertoires();
-		this.oTermine = new Termine();
-		this.oMitglieder = new Mitglieder();
+		this.repertoire = new Repertoires();
+		this.termine = new Termine();
+		this.mitglieder = new Mitglieder();
 		
 	}
 	

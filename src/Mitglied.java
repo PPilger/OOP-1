@@ -1,19 +1,18 @@
 
-public class Mitglied extends HatZeitraumCollection<Object> {
+private class Mitglied implements HatZeitraumCollection<Object> {
 	
 	//Variablendefinition
-	//TODO: Besprechen was public und private
-	public String sName;
-	public int iTelNr;
-	public String sInstrument;
-	public Zeitraum oZeitraum;
+	private String name;
+	private int telNr;
+	private String snstrument;
+	private Zeitraum zeitraum;
 	
 	//Konstruktor
-	public Mitglied(String sName, int iTelNr, String sInstrument, Zeitraum oZeitraum) {
-		this.sName = sName;
-		this.iTelNr = iTelNr;
-		this.sInstrument = sInstrument;
-		this.oZeitraum = oZeitraum;
+	public Mitglied(String name, int telNr, String instrument, Zeitraum zeitraum) {
+		this.name = name;
+		this.telNr = telNr;
+		this.instrument = instrument;
+		this.zeitraum = zeitraum;
 	}
 	
 	

@@ -1,16 +1,15 @@
 
 public class Song {
 	
-	//TODO: Besprechen, public und private
-	public String sName;
-	public double dLaenge;
-	public Zeitraum oZeitraum;
+	private String name;
+	private double laenge;
+	private Zeitraum zeitraum;
 	
 	//Konstruktor
-	public Song(String sName, double dLaenge, Zeitraum oZeitraum){
-		this.sName = sName;
-		this.dLaenge = dLaenge;
-		this.oZeitraum = oZeitraum;
+	public Song(String name, double laenge, Zeitraum zeitraum){
+		this.name = name;
+		this.laenge = laenge;
+		this.zeitraum = zeitraum;
 	}
 	
 	
