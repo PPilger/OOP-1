@@ -4,7 +4,7 @@ private class Mitglied implements HatZeitraumCollection<Object> {
 	//Variablendefinition
 	private String name;
 	private int telNr;
-	private String snstrument;
+	private String instrument;
 	private Zeitraum zeitraum;
 	
 	//Konstruktor
