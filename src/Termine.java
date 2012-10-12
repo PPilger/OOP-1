@@ -18,19 +18,13 @@ public class Termine extends HatZeitraumCollection<Termin> {
 	 * @param zeitpunkt
 	 * @return
 	 */
-	public Collection<Termin> list(String typ, Date zeitpunkt) {
+	public Collection<Termin> list(Class<? extends Termin> typ, Date zeitpunkt) {
 		Collection<Termin> liste = list(zeitpunkt);
-
-		if ("alle".equals(typ.toLowerCase())) {
-			return liste;
-		}
 
 		Iterator<Termin> iter = liste.iterator();
 		while (iter.hasNext()) {
-			Object termin = iter.next();
-			// TODO: if(...) -> Abfrage, ob typ mit termin.getTyp()
-			// übereinstimmt
-			if (termin.getClass() == Object.class) {
+			Termin termin = iter.next();
+			if (termin.getClass().isInstance(typ)) {
 				iter.remove();
 			}
 		}
@@ -46,7 +40,7 @@ public class Termine extends HatZeitraumCollection<Termin> {
 	 * @param zeitpunkt
 	 * @return
 	 */
-	public double getGewinn(String typ, Date zeitpunkt) {
+	public double getGewinn(Class<? extends Termin> typ, Date zeitpunkt) {
 		double gewinn = 0;
 
 		for (Termin termin : list(typ, zeitpunkt)) {
@@ -64,7 +58,7 @@ public class Termine extends HatZeitraumCollection<Termin> {
 	 * @param zeitpunkt
 	 * @return
 	 */
-	public double getKosten(String typ, Date zeitpunkt) {
+	public double getKosten(Class<? extends Termin> typ, Date zeitpunkt) {
 		double kosten = 0;
 
 		for (Termin termin : list(typ, zeitpunkt)) {

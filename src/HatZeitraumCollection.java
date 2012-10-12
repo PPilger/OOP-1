@@ -7,7 +7,8 @@ import java.util.Date;
  * 
  * @author Peter Pilgerstorfer
  * 
- * @param <T> Der Typ der in der Collection gespeicherten Objekte.
+ * @param <T>
+ *            Der Typ der in der Collection gespeicherten Objekte.
  */
 public abstract class HatZeitraumCollection<T extends HatZeitraum> {
 	private Collection<T> elemente = new ArrayList<T>();
@@ -28,9 +29,13 @@ public abstract class HatZeitraumCollection<T extends HatZeitraum> {
 	 * @return
 	 */
 	public Collection<T> list(Date zeitpunkt) {
-		Collection<T> liste = new ArrayList<T>(elemente);
+		Collection<T> liste = new ArrayList<T>();
 
-		// TODO
+		for (T element : elemente) {
+			if (element.getZeitraum().inZeitraum(zeitpunkt)) {
+				liste.add(element);
+			}
+		}
 
 		return liste;
 	}

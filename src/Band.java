@@ -1,9 +1,9 @@
 
-private class Band {
+public class Band {
 
 	private String name;
 	private String ausrichtung;
-	private Repertoires repertoire;
+	private Songs repertoire;
 	private Termine termine;
 	private Mitglieder mitglieder;
 	
@@ -12,7 +12,7 @@ private class Band {
 		this.name = name;
 		this.ausrichtung = ausrichtung;
 		
-		this.repertoire = new Repertoires();
+		this.repertoire = new Songs();
 		this.termine = new Termine();
 		this.mitglieder = new Mitglieder();
 		
