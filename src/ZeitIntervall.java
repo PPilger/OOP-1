@@ -14,7 +14,7 @@ public class ZeitIntervall implements Zeitraum {
 
 	/**
 	 * Erstellt ein neues Objekt. Der Anfang ("von") ist immer vor dem Ende
-	 * ("bis"). 
+	 * ("bis").
 	 * 
 	 * @param von
 	 *            Anfang des Zeitintervalls, darf nicht null sein!
@@ -23,35 +23,14 @@ public class ZeitIntervall implements Zeitraum {
 	 * 
 	 */
 	public ZeitIntervall(Date von, Date bis) {
-// 			"von" ist nach "bis" Widerspruch!
-			if (von.after(bis)) {
-				this.von = bis;
-				this.bis = von;
-			} else {
-				this.bis = bis;
-				this.von = von;
-			}
+		// "von" ist nach "bis" Widerspruch!
+		if (von.after(bis)) {
+			this.von = bis;
+			this.bis = von;
+		} else {
+			this.bis = bis;
+			this.von = von;
 		}
-	}
-
-	@Override
-	/**
-	 * Überprüft ob sich das Intervall mit dem im @param z überschneiden. True wenn sie sich schneiden, sonst false. False wird auch dann zurückgegeben wenn @param z null ist.
-	 */
-	public boolean inZeitraum(Zeitraum zr) {
-
-		if (ZeitIntervall.class == zr.getClass()) {
-			ZeitIntervall z = (ZeitIntervall) zr;
-			// z liegt dann nicht in diesem Zeitraum, falls er vor "von" endet
-			// oder
-			// nach "bis" anfaengt
-			if (z == null || z.bis.before(this.von) || z.von.after(this.bis)) {
-				return false;
-			}
-			return true;
-		}
-
-		return false;
 	}
 
 	@Override
@@ -60,7 +39,7 @@ public class ZeitIntervall implements Zeitraum {
 	 * @param Darf nicht null sein
 	 */
 	public boolean inZeitraum(Date z) {
-					return this.bis.before(z) && this.bis.after(z);
+		return this.bis.before(z) && this.bis.after(z);
 	}
 
 }
