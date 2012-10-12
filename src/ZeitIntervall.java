@@ -42,4 +42,9 @@ public class ZeitIntervall implements Zeitraum {
 		return this.bis.before(z) && this.bis.after(z);
 	}
 
+	@Override
+	public String toString()
+	{
+		return "[ " + von.toString() + " <> " + bis.toString() + " ]";
+	}
 }

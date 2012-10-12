@@ -37,4 +37,10 @@ public class Auftritt extends Termin {
 	public double getUmsatz() {
 		return gage;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "Auftritt: " + super.toString() + " Gage: " + gage;
+	}
 }

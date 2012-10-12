@@ -43,5 +43,11 @@ public abstract class Termin implements HatZeitraum {
 	public Zeitraum getZeitraum() {
 		return zeitraum;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "Ort: " + ort + "Zeitraum: " + zeitraum.toString();
+	}
 
 }
