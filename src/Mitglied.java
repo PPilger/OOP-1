@@ -1,7 +1,7 @@
 /**
  * 
  * @author Christian Kletzander
- *
+ * 
  */
 public class Mitglied implements HatZeitraum {
 
@@ -23,12 +23,11 @@ public class Mitglied implements HatZeitraum {
 	public Zeitraum getZeitraum() {
 		return this.zeitraum;
 	}
-	
+
 	public String toString() {
-		return "Mitgliedname: " + this.name + "\n" +
-			   "TelefonNr.: " + this.telNr + "\n" +
-			   "Instrument: " + this.instrument + "\n" +
-			   "Mitgliedszeitraum: " + this.zeitraum;
+		return "Mitgliedname: " + this.name + "\n" + "TelefonNr.: "
+				+ this.telNr + "\n" + "Instrument: " + this.instrument + "\n"
+				+ "Mitgliedszeitraum: " + this.zeitraum;
 	}
 
 }

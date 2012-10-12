@@ -1,7 +1,7 @@
 /**
  * 
  * @author Christian Kletzander
- *
+ * 
  */
 public class Song implements HatZeitraum {
 
@@ -20,11 +20,10 @@ public class Song implements HatZeitraum {
 	public Zeitraum getZeitraum() {
 		return this.zeitraum;
 	}
-	
+
 	public String toString() {
-		return "Songname: " + this.name + "\n" + 
-			   "Songlänge: " + this.laenge + "\n" + 
-			   "Spielzeitraum: " + this.zeitraum;
+		return "Songname: " + this.name + "\n" + "Songlänge: " + this.laenge
+				+ "\n" + "Spielzeitraum: " + this.zeitraum;
 	}
 
 }
