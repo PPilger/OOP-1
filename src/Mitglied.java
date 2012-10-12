@@ -1,22 +1,23 @@
+public class Mitglied implements HatZeitraum {
 
-private class Mitglied implements HatZeitraumCollection<Object> {
-	
-	//Variablendefinition
+	// Variablendefinition
 	private String name;
 	private int telNr;
 	private String instrument;
 	private Zeitraum zeitraum;
-	
-	//Konstruktor
+
+	// Konstruktor
 	public Mitglied(String name, int telNr, String instrument, Zeitraum zeitraum) {
 		this.name = name;
 		this.telNr = telNr;
 		this.instrument = instrument;
 		this.zeitraum = zeitraum;
 	}
-	
-	
-	
-	
-	
+
+	@Override
+	public Zeitraum getZeitraum() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

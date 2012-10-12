@@ -1,5 +1,9 @@
-
-//TODO: Object -> Mitglied
-public class Mitglieder extends HatZeitraumCollection<Object> {
+/**
+ * Eine Sammlung von Mitgliedern.
+ * 
+ * @author Peter Pilgerstorfer
+ * 
+ */
+public class Mitglieder extends HatZeitraumCollection<Mitglied> {
 
 }
