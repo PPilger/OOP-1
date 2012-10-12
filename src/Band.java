@@ -35,7 +35,7 @@ public class Band {
 	}
 
 	public String toString() {
-		return this.name + "(" + this.ausrichtung + ")";
+		return this.name + ", " + this.ausrichtung;
 	}
 
 }

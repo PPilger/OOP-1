@@ -7,12 +7,12 @@ public class Mitglied implements HatZeitraum {
 
 	// Variablendefinition
 	private String name;
-	private int telNr;
+	private String telNr;
 	private String instrument;
 	private Zeitraum zeitraum;
 
 	// Konstruktor
-	public Mitglied(String name, int telNr, String instrument, Zeitraum zeitraum) {
+	public Mitglied(String name, String telNr, String instrument, Zeitraum zeitraum) {
 		this.name = name;
 		this.telNr = telNr;
 		this.instrument = instrument;
@@ -25,7 +25,7 @@ public class Mitglied implements HatZeitraum {
 	}
 
 	public String toString() {
-		return this.name + this.zeitraum + "(" + this.instrument + ")\n" + "TelefonNr: " + this.telNr;
+		return this.name + " (" + this.instrument + ") " +  this.zeitraum + "\n" + "TelefonNr: " + this.telNr;
 	}
 
 }
