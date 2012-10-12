@@ -14,9 +14,9 @@ public class Auftritt extends Termin {
 	 * @param dauer Länge in ms.
 	 * @param gage Gage
 	 */
-	public Auftritt(String ort, Zeitraum zeitraum, long dauer, double gage)
+	public Auftritt(String ort, Zeitraum zeitraum, double gage)
 	{
-		super(ort,zeitraum,dauer);
+		super(ort,zeitraum);
 		this.gage = gage;
 	}
 	
