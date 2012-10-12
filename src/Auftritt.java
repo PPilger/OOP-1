@@ -1,37 +1,32 @@
 /**
- * Speichert die auftrittspezifischen Eigenschaften eines Termins
+ * Speichert die auftrittspezifischen Eigenschaften eines Termins.
+ * 
  * @author Kögler Alexander
- *
+ * 
  */
 public class Auftritt extends Termin {
 
 	private double gage;
-	
+
 	/**
 	 * 
-	 * @param ort Ort
-	 * @param zeitraum Zeitraum
-	 * @param dauer Länge in ms.
-	 * @param gage Gage
+	 * @param ort
+	 *            Ort
+	 * @param zeitraum
+	 *            Zeitraum
+	 * @param dauer
+	 *            Länge in ms.
+	 * @param gage
+	 *            Gage
 	 */
-	public Auftritt(String ort, Zeitraum zeitraum, double gage)
-	{
-		super(ort,zeitraum);
+	public Auftritt(String ort, Zeitraum zeitraum, double gage) {
+		super(ort, zeitraum);
 		this.gage = gage;
-	}
-	
-	@Override
-	public Object getType() {
-		return getClass();
 	}
 
 	@Override
-	/**
-	 * Gagen werden als Gewinn verbucht
-	 * @return Gage
-	 */
-	public double getGewinn() {
-		return this.gage;
+	public Object getType() {
+		return getClass();
 	}
 
 	@Override
@@ -41,5 +36,10 @@ public class Auftritt extends Termin {
 	 */
 	public double getKosten() {
 		return 0;
-	}	
+	}
+
+	@Override
+	public double getUmsatz() {
+		return gage;
+	}
 }

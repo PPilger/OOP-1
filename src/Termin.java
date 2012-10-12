@@ -25,7 +25,10 @@ public abstract class Termin implements HatZeitraum {
 	 * 
 	 * @return Gewinn
 	 */
-	public abstract double getGewinn();
+	public double getGewinn()
+	{
+		return getUmsatz() - getKosten();
+	}
 
 	/**
 	 * 
@@ -38,9 +41,7 @@ public abstract class Termin implements HatZeitraum {
 	 * 
 	 * @return Umsatz
 	 */
-	public double getUmsatz() {
-		return getGewinn() + getKosten();
-	}
+	public abstract double getUmsatz();
 
 	/**
 	 * @return Gibt das lokale Zeitintervall zurück

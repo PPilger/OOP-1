@@ -27,16 +27,7 @@ public class Probe extends Termin {
 	@Override
 	public Object getType() {
 		return this.getClass();
-	}
-
-	@Override
-	/**
-	 * Proben lukrieren keinen Gewinn
-	 * @return 0
-	 */
-	public double getGewinn() {
-		return 0;
-	}
+	}	
 
 	@Override
 	/**
@@ -44,6 +35,11 @@ public class Probe extends Termin {
 	 *  @return Raummiete 
 	 */
 	public double getKosten() {
+		return raummiete;
+	}
+
+	@Override
+	public double getUmsatz() {
 		return raummiete;
 	}
 
