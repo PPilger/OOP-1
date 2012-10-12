@@ -25,11 +25,6 @@ public class Probe extends Termin {
 	private double raummiete;
 
 	@Override
-	public Object getType() {
-		return this.getClass();
-	}	
-
-	@Override
 	/**
 	 * Raummieten werden als Kosten verbucht
 	 *  @return Raummiete 

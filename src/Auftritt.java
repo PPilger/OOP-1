@@ -25,11 +25,6 @@ public class Auftritt extends Termin {
 	}
 
 	@Override
-	public Object getType() {
-		return getClass();
-	}
-
-	@Override
 	/**
 	 * Auftritte haben keinerlei Kosten
 	 * @return 0

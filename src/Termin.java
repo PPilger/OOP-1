@@ -17,12 +17,6 @@ public abstract class Termin implements HatZeitraum {
 
 	/**
 	 * 
-	 * @return Typ des Object
-	 */
-	public abstract Object getType();
-
-	/**
-	 * 
 	 * @return Gewinn
 	 */
 	public double getGewinn()
