@@ -22,6 +22,6 @@ public class Song implements HatZeitraum {
 	}
 
 	public String toString() {
-		return this.name + "<" + this.laenge + "> " + "(" + this.zeitraum + ")";
+		return this.name + " (" + this.laenge + ") " + this.zeitraum;
 	}
 }

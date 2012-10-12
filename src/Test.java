@@ -12,12 +12,12 @@ public class Test {
 		
 		kalender.set(1987, 7, 5);
 		zeitraum = new ZeitAb(kalender.getTime());
-		mitglied = new Mitglied("Billie Joe Armstrong", 312345, "Gitarre", zeitraum);
+		mitglied = new Mitglied("Billie Joe Armstrong", "31/2345", "Gitarre", zeitraum);
 		band.getMitglieder().add(mitglied);
 
 		kalender.set(1987, 6, 4);
 		zeitraum = new ZeitAb(kalender.getTime());
-		mitglied = new Mitglied("Mike Dirnt", 234765, "Bass", zeitraum);
+		mitglied = new Mitglied("Mike Dirnt", "3123/2215", "Bass", zeitraum);
 		band.getMitglieder().add(mitglied);
 		
 		System.out.println(band.getMitglieder());
