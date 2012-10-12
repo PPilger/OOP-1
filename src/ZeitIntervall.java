@@ -1,4 +1,7 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Representiert einen Eindimensionalen Zeitabschnitt bestehend aus Anfang und
@@ -45,6 +48,8 @@ public class ZeitIntervall implements Zeitraum {
 	@Override
 	public String toString()
 	{
-		return "[ " + von.toString() + " <> " + bis.toString() + " ]";
+		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.ENGLISH);
+		
+		return "[ " + df.format(von) + " <> " + df.format(bis) + " ]";
 	}
 }
