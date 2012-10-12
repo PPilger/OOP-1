@@ -9,7 +9,6 @@ import java.util.Iterator;
  * 
  */
 public class Termine extends HatZeitraumCollection<Termin> {
-
 	/**
 	 * Gibt alle Termine des übergebenen Typs <code>typ</code>, die zum
 	 * Zeitpunkt <code>zeitpunkt</code> gültig sind zurück.

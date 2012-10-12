@@ -5,5 +5,4 @@
  * 
  */
 public class Mitglieder extends HatZeitraumCollection<Mitglied> {
-
 }

@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Iterator;
 
 /**
  * Eine Sammlung von Objekten die einen Zeitraum haben.
@@ -10,7 +11,7 @@ import java.util.Date;
  * @param <T>
  *            Der Typ der in der Collection gespeicherten Objekte.
  */
-public abstract class HatZeitraumCollection<T extends HatZeitraum> {
+public class HatZeitraumCollection<T extends HatZeitraum> {
 	private Collection<T> elemente = new ArrayList<T>();
 
 	public void add(T element) {
@@ -38,5 +39,20 @@ public abstract class HatZeitraumCollection<T extends HatZeitraum> {
 		}
 
 		return liste;
+	}
+	
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		
+		Iterator<T> iter = elemente.iterator();
+		if(iter.hasNext()) {
+			builder.append(iter.next());
+		}
+		while(iter.hasNext()) {
+			builder.append('\n');
+			builder.append(iter.next());
+		}
+		
+		return builder.toString();
 	}
 }

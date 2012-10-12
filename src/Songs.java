@@ -5,5 +5,4 @@
  * 
  */
 public class Songs extends HatZeitraumCollection<Song> {
-
 }
