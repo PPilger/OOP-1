@@ -1,3 +1,8 @@
+/**
+ * 
+ * @author Christian Kletzander
+ *
+ */
 public class Mitglied implements HatZeitraum {
 
 	// Variablendefinition
@@ -16,8 +21,14 @@ public class Mitglied implements HatZeitraum {
 
 	@Override
 	public Zeitraum getZeitraum() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.zeitraum;
+	}
+	
+	public String toString() {
+		return "Mitgliedname: " + this.name + "\n" +
+			   "TelefonNr.: " + this.telNr + "\n" +
+			   "Instrument: " + this.instrument + "\n" +
+			   "Mitgliedszeitraum: " + this.zeitraum;
 	}
 
 }

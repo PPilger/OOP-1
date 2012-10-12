@@ -1,6 +1,11 @@
-
+/**
+ * 
+ * @author Christian Kletzander
+ *
+ */
 public class Band {
 
+	//Variablendefinition
 	private String name;
 	private String ausrichtung;
 	private Songs repertoire;
@@ -15,7 +20,23 @@ public class Band {
 		this.repertoire = new Songs();
 		this.termine = new Termine();
 		this.mitglieder = new Mitglieder();
-		
+	}
+	
+	public Songs getRepertoire() {
+		return this.repertoire;
+	}
+	
+	public Termine getTermine() {
+		return this.termine;
+	}
+	
+	public Mitglieder getMitglieder() {
+		return this.mitglieder;
+	}
+	
+	public String toString() {
+		return "Bandname: " + this.name + "\n" +
+				"Ausrichtung: " + this.ausrichtung;
 	}
 	
 }

@@ -1,3 +1,8 @@
+/**
+ * 
+ * @author Christian Kletzander
+ *
+ */
 public class Song implements HatZeitraum {
 
 	private String name;
@@ -13,8 +18,13 @@ public class Song implements HatZeitraum {
 
 	@Override
 	public Zeitraum getZeitraum() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.zeitraum;
+	}
+	
+	public String toString() {
+		return "Songname: " + this.name + "\n" + 
+			   "Songlänge: " + this.laenge + "\n" + 
+			   "Spielzeitraum: " + this.zeitraum;
 	}
 
 }
