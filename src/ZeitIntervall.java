@@ -9,8 +9,8 @@ import java.util.Date;
  */
 public class ZeitIntervall implements Zeitraum {
 
-	private Date grenze1;
-	private Date grenze2;
+	private Date von;
+	private Date bis;
 
 	/**
 	 * Erstellt ein neues Objekt. Der Anfang ("von") ist immer vor dem Ende
@@ -22,14 +22,14 @@ public class ZeitIntervall implements Zeitraum {
 	 *            Ende des Zeitintervalls, darf nicht null sein!
 	 * 
 	 */
-	public ZeitIntervall(Date von, Date bis) {
+	public ZeitIntervall(Date grenze1, Date grenze2) {
 		// "von" ist nach "bis" Widerspruch!
-		if (von.after(bis)) {
-			this.grenze1 = bis;
-			this.grenze2 = von;
+		if (grenze1.after(grenze2)) {
+			this.von = grenze2;
+			this.bis = grenze1;
 		} else {
-			this.grenze1 = bis;
-			this.grenze2 = von;
+			this.von = grenze1;
+			this.bis = grenze2;
 		}
 	}
 

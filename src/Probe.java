@@ -35,7 +35,7 @@ public class Probe extends Termin {
 
 	@Override
 	public double getUmsatz() {
-		return raummiete;
+		return 0;
 	}
 
 }
