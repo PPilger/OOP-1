@@ -25,9 +25,8 @@ public class Mitglied implements HatZeitraum {
 	}
 
 	public String toString() {
-		return "Mitgliedname: " + this.name + "\n" + "TelefonNr.: "
-				+ this.telNr + "\n" + "Instrument: " + this.instrument + "\n"
-				+ "Mitgliedszeitraum: " + this.zeitraum;
+		return this.name + "(" + this.telNr + ") <" + this.instrument + "> // "
+				+ this.zeitraum;
 	}
 
 }
