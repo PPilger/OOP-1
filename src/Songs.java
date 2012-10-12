@@ -1,5 +1,9 @@
-
-//TODO: Object -> Song
-public class Songs extends HatZeitraumCollection<Object> {
+/**
+ * Eine Sammlung von Songs.
+ * 
+ * @author Peter Pilgerstorfer
+ * 
+ */
+public class Songs extends HatZeitraumCollection<Song> {
 
 }

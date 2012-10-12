@@ -1,34 +1,37 @@
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 
-
-//TODO: T extends HatZeitraum
 /**
  * Eine Sammlung von Objekten die einen Zeitraum haben.
  * 
  * @author Peter Pilgerstorfer
- *
- * @param <T>
+ * 
+ * @param <T> Der Typ der in der Collection gespeicherten Objekte.
  */
-public abstract class HatZeitraumCollection<T> {
+public abstract class HatZeitraumCollection<T extends HatZeitraum> {
 	private Collection<T> elemente = new ArrayList<T>();
 
 	public void add(T element) {
 		elemente.add(element);
 	}
-	
+
 	public void remove(T element) {
 		elemente.remove(element);
 	}
 
 	/**
-	 * Gibt die Elemente zurueck, wo <code>zeitpunkt</code> in den Zeitraum faellt.
+	 * Gibt die Elemente zurück, wo <code>zeitpunkt</code> in den Zeitraum
+	 * fällt.
+	 * 
 	 * @param zeitpunkt
 	 * @return
 	 */
-	public Collection<T> list(long zeitpunkt) {
+	public Collection<T> list(Date zeitpunkt) {
 		Collection<T> liste = new ArrayList<T>(elemente);
-		//TODO
+
+		// TODO
+
 		return liste;
 	}
 }
