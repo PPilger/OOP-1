@@ -1,3 +1,4 @@
+import java.text.DateFormat;
 import java.util.Date;
 
 /**
@@ -13,4 +14,6 @@ public interface Zeitraum {
 	 * @return True bei überschneidung des Lokalen ZeitIntervalls mit dem in z, false wenn keine Überschneidung existiert oder z null ist.
 	 */
 	public boolean inZeitraum(Date z);
+	
+	public String toString(DateFormat df);
 }

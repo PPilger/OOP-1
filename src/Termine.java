@@ -9,6 +9,12 @@ import java.util.Iterator;
  * 
  */
 public class Termine extends HatZeitraumCollection<Termin> {
+
+	/**
+	 * Serialisierungs ID
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * Gibt alle Termine des übergebenen Typs <code>typ</code>, die zum
 	 * Zeitpunkt <code>zeitpunkt</code> gültig sind zurück.
@@ -23,7 +29,7 @@ public class Termine extends HatZeitraumCollection<Termin> {
 		Iterator<Termin> iter = liste.iterator();
 		while (iter.hasNext()) {
 			Termin termin = iter.next();
-			if (termin.getClass().isInstance(typ)) {
+			if (!termin.getClass().equals(typ)) {
 				iter.remove();
 			}
 		}

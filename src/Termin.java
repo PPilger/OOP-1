@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+
 /**
  * Speichert Ort, Zeitraum, Dauer ab. Bietet Methoden für die kaufmännische
  * Berechnungslehre.
@@ -19,8 +21,7 @@ public abstract class Termin implements HatZeitraum {
 	 * 
 	 * @return Gewinn
 	 */
-	public double getGewinn()
-	{
+	public double getGewinn() {
 		return getUmsatz() - getKosten();
 	}
 
@@ -43,11 +44,12 @@ public abstract class Termin implements HatZeitraum {
 	public Zeitraum getZeitraum() {
 		return zeitraum;
 	}
-	
+
 	@Override
-	public String toString()
-	{
-		return "Ort: " + ort + "Zeitraum: " + zeitraum.toString();
+	public String toString() {
+		return ort + " "
+				+ zeitraum.toString(new SimpleDateFormat("dd.MM.yyyy hh:mm"));
 	}
 
+	public abstract String toDetailString();
 }

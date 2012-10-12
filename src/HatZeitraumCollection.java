@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.Iterator;
 
 /**
  * Eine Sammlung von Objekten die einen Zeitraum haben.
@@ -9,18 +8,13 @@ import java.util.Iterator;
  * @author Peter Pilgerstorfer
  * 
  * @param <T>
- *            Der Typ der in der Collection gespeicherten Objekte.
+ *            Der Typ der in der Sammlung gespeicherten Objekte.
  */
-public class HatZeitraumCollection<T extends HatZeitraum> {
-	private Collection<T> elemente = new ArrayList<T>();
-
-	public void add(T element) {
-		elemente.add(element);
-	}
-
-	public void remove(T element) {
-		elemente.remove(element);
-	}
+public class HatZeitraumCollection<T extends HatZeitraum> extends ArrayList<T> {
+	/**
+	 * Serialisierungs ID
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Gibt die Elemente zurück, wo <code>zeitpunkt</code> in den Zeitraum
@@ -30,29 +24,14 @@ public class HatZeitraumCollection<T extends HatZeitraum> {
 	 * @return
 	 */
 	public Collection<T> list(Date zeitpunkt) {
-		Collection<T> liste = new ArrayList<T>();
+		Collection<T> ausgabe = new HatZeitraumCollection<T>();
 
-		for (T element : elemente) {
+		for (T element : this) {
 			if (element.getZeitraum().inZeitraum(zeitpunkt)) {
-				liste.add(element);
+				ausgabe.add(element);
 			}
 		}
 
-		return liste;
-	}
-	
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		
-		Iterator<T> iter = elemente.iterator();
-		if(iter.hasNext()) {
-			builder.append(iter.next());
-		}
-		while(iter.hasNext()) {
-			builder.append('\n');
-			builder.append(iter.next());
-		}
-		
-		return builder.toString();
+		return ausgabe;
 	}
 }

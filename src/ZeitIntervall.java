@@ -1,7 +1,5 @@
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 /**
  * Representiert einen Eindimensionalen Zeitabschnitt bestehend aus Anfang und
@@ -26,7 +24,6 @@ public class ZeitIntervall implements Zeitraum {
 	 * 
 	 */
 	public ZeitIntervall(Date grenze1, Date grenze2) {
-		// "von" ist nach "bis" Widerspruch!
 		if (grenze1.after(grenze2)) {
 			this.von = grenze2;
 			this.bis = grenze1;
@@ -42,14 +39,16 @@ public class ZeitIntervall implements Zeitraum {
 	 * @param Darf nicht null sein
 	 */
 	public boolean inZeitraum(Date z) {
-		return this.bis.before(z) && this.bis.after(z);
+		return !(this.von.after(z) || this.bis.before(z));
 	}
 
 	@Override
-	public String toString()
-	{
-		DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.ENGLISH);
-		
-		return "[ " + df.format(von) + " <> " + df.format(bis) + " ]";
+	public String toString() {
+		return toString(DateFormat.getDateInstance());
+	}
+
+	@Override
+	public String toString(DateFormat format) {
+		return "[" + format.format(von) + " - " + format.format(bis) + "]";
 	}
 }

@@ -1,3 +1,4 @@
+
 /**
  * 
  * @author Christian Kletzander
@@ -6,11 +7,11 @@
 public class Song implements HatZeitraum {
 
 	private String name;
-	private double laenge;
+	private int laenge;
 	private Zeitraum zeitraum;
 
 	// Konstruktor
-	public Song(String name, double laenge, Zeitraum zeitraum) {
+	public Song(String name, int laenge, Zeitraum zeitraum) {
 		this.name = name;
 		this.laenge = laenge;
 		this.zeitraum = zeitraum;
@@ -22,6 +23,11 @@ public class Song implements HatZeitraum {
 	}
 
 	public String toString() {
-		return this.name + " (" + this.laenge + ") " + this.zeitraum;
+		return String.format("%s (%d:%02d)", this.name, this.laenge / 60,
+				this.laenge % 60);
+	}
+
+	public String toDetailString() {
+		return toString() + " " + this.zeitraum;
 	}
 }

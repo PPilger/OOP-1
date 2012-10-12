@@ -37,11 +37,14 @@ public class Probe extends Termin {
 	public double getUmsatz() {
 		return 0;
 	}
+
+	@Override
+	public String toString() {
+		return "Probe: " + super.toString();
+	}
 	
 	@Override
-	public String toString()
-	{
-		return "Probe: " + super.toString() + " Raummiete: " + raummiete;
+	public String toDetailString() {
+		return String.format("%s, Raummiete: %,.2f", toString(), raummiete);
 	}
-
 }
