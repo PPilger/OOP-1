@@ -1,7 +1,7 @@
 /**
  * Speichert die auftrittspezifischen Eigenschaften eines Termins.
  * 
- * @author Kögler Alexander
+ * @author Koegler Alexander
  * 
  */
 public class Auftritt extends Termin {
@@ -15,7 +15,7 @@ public class Auftritt extends Termin {
 	 * @param zeitIntervall
 	 *            ZeitIntervall
 	 * @param dauer
-	 *            Länge in ms.
+	 *            Laenge in ms.
 	 * @param gage
 	 *            Gage
 	 */

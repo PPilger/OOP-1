@@ -4,16 +4,17 @@ import java.util.Date;
 public class Test {
 	private static Date toDate(int jahr, int monat, int tag) {
 		Calendar kalender = Calendar.getInstance();
-		kalender.set(jahr, monat-1, tag);
+		kalender.set(jahr, monat - 1, tag);
 		return kalender.getTime();
 	}
 
-	private static Date toDate(int jahr, int monat, int tag, int stunde, int minute) {
+	private static Date toDate(int jahr, int monat, int tag, int stunde,
+			int minute) {
 		Calendar kalender = Calendar.getInstance();
-		kalender.set(jahr, monat-1, tag, stunde, minute);
+		kalender.set(jahr, monat - 1, tag, stunde, minute);
 		return kalender.getTime();
 	}
-	
+
 	public static void main(String[] args) {
 		System.out.println("Teste Band");
 		System.out.println();
@@ -35,82 +36,93 @@ public class Test {
 		testeTermine();
 
 	}
-	
+
 	private static void testeBand() {
 		Band band = new Band("Green Day", "Rock");
 		System.out.println(band);
 		System.out.println();
 	}
-	
+
 	private static void testeTermine() {
 		Termin termin;
 		ZeitIntervall zeitIntervall;
 		Band band = new Band("Green Day", "Rock");
 
-		//Auftritte
-		zeitIntervall = new ZeitIntervall(toDate(2012, 9, 1, 18, 0), toDate(2012, 9, 2, 1, 0));
+		// Auftritte
+		zeitIntervall = new ZeitIntervall(toDate(2012, 9, 1, 18, 0), toDate(
+				2012, 9, 2, 1, 0));
 		termin = new Auftritt("Konstanz", zeitIntervall, 100000);
 		band.getTermine().add(termin);
 		System.out.println("+ " + termin.toDetailString());
-		
-		zeitIntervall = new ZeitIntervall(toDate(2012, 8, 30, 16, 0), toDate(2012, 8, 30, 23, 0));
+
+		zeitIntervall = new ZeitIntervall(toDate(2012, 8, 30, 16, 0), toDate(
+				2012, 8, 30, 23, 0));
 		termin = new Auftritt("Berlin", zeitIntervall, 250000);
 		band.getTermine().add(termin);
 		System.out.println("+ " + termin.toDetailString());
-		
-		zeitIntervall = new ZeitIntervall(toDate(2010, 7, 1, 17, 0), toDate(2010, 7, 1, 22, 0));
+
+		zeitIntervall = new ZeitIntervall(toDate(2010, 7, 1, 17, 0), toDate(
+				2010, 7, 1, 22, 0));
 		termin = new Auftritt("Mainz", zeitIntervall, 80000);
 		band.getTermine().add(termin);
 		System.out.println("+ " + termin.toDetailString());
-		
-		//Termine
-		zeitIntervall = new ZeitIntervall(toDate(2012, 7, 1, 8, 0), toDate(2012, 7, 1, 15, 0));
+
+		// Termine
+		zeitIntervall = new ZeitIntervall(toDate(2012, 7, 1, 8, 0), toDate(
+				2012, 7, 1, 15, 0));
 		termin = new Probe("Studio", zeitIntervall, 10000);
 		band.getTermine().add(termin);
 		System.out.println("+ " + termin.toDetailString());
-		
-		zeitIntervall = new ZeitIntervall(toDate(2012, 7, 20, 10, 0), toDate(2012, 7, 20, 20, 0));
+
+		zeitIntervall = new ZeitIntervall(toDate(2012, 7, 20, 10, 0), toDate(
+				2012, 7, 20, 20, 0));
 		termin = new Probe("zu Hause", zeitIntervall, 10);
 		band.getTermine().add(termin);
 		System.out.println("+ " + termin.toDetailString());
-		
-		zeitIntervall = new ZeitIntervall(toDate(2010, 9, 1, 9, 0), toDate(2010, 9, 1, 18, 0));
+
+		zeitIntervall = new ZeitIntervall(toDate(2010, 9, 1, 9, 0), toDate(
+				2010, 9, 1, 18, 0));
 		termin = new Probe("Stadthalle", zeitIntervall, 20000);
 		band.getTermine().add(termin);
 		System.out.println("+ " + termin.toDetailString());
 
-		Zeitraum zeitraum = new ZeitIntervall(toDate(2012, 7, 2), toDate(2012, 9, 1));
-		
+		Zeitraum zeitraum = new ZeitIntervall(toDate(2012, 7, 2), toDate(2012,
+				9, 1));
+
 		System.out.println();
 		System.out.println("Termine: ");
 		System.out.println(band.getTermine());
 		System.out.println("Gewinn: " + band.getTermine().getGewinn());
 		System.out.println("Kosten: " + band.getTermine().getKosten());
 		System.out.println();
-		System.out.println("Termine "+zeitraum+": ");
+		System.out.println("Termine " + zeitraum + ": ");
 		System.out.println(band.getTermine(zeitraum));
 		System.out.println("Gewinn: " + band.getTermine(zeitraum).getGewinn());
 		System.out.println("Kosten: " + band.getTermine(zeitraum).getKosten());
 		System.out.println();
-		System.out.println("Proben "+zeitraum+": ");
+		System.out.println("Proben " + zeitraum + ": ");
 		System.out.println(band.getTermine(Probe.class, zeitraum));
-		System.out.println("Gewinn: " + band.getTermine(Probe.class, zeitraum).getGewinn());
-		System.out.println("Kosten: " + band.getTermine(Probe.class, zeitraum).getKosten());
+		System.out.println("Gewinn: "
+				+ band.getTermine(Probe.class, zeitraum).getGewinn());
+		System.out.println("Kosten: "
+				+ band.getTermine(Probe.class, zeitraum).getKosten());
 		System.out.println();
-		System.out.println("Auftritte "+zeitraum+": ");
+		System.out.println("Auftritte " + zeitraum + ": ");
 		System.out.println(band.getTermine(Auftritt.class, zeitraum));
-		System.out.println("Gewinn: " + band.getTermine(Auftritt.class, zeitraum).getGewinn());
-		System.out.println("Kosten: " + band.getTermine(Auftritt.class, zeitraum).getKosten());
+		System.out.println("Gewinn: "
+				+ band.getTermine(Auftritt.class, zeitraum).getGewinn());
+		System.out.println("Kosten: "
+				+ band.getTermine(Auftritt.class, zeitraum).getKosten());
 		System.out.println();
-		
+
 		termin = band.getTermine().get(1);
 		band.getTermine().remove(termin);
 		System.out.println("- " + termin.toDetailString());
-		
+
 		termin = band.getTermine().get(3);
 		band.getTermine().remove(termin);
 		System.out.println("- " + termin.toDetailString());
-		
+
 		System.out.println();
 		System.out.println("Termine: ");
 		System.out.println(band.getTermine());
@@ -118,7 +130,7 @@ public class Test {
 		System.out.println("Kosten: " + band.getTermine().getKosten());
 		System.out.println();
 	}
-	
+
 	private static void testeRepertoire() {
 		Song song;
 		Zeitraum zeitraum;
@@ -138,7 +150,7 @@ public class Test {
 		song = new Song("American Idiot", 195, zeitraum);
 		band.getRepertoire().add(song);
 		System.out.println("+ " + song.toDetailString());
-		
+
 		System.out.println();
 		System.out.println("Repertoire: ");
 		System.out.println(band.getRepertoire());
@@ -149,24 +161,25 @@ public class Test {
 		System.out.println("Repertoire am 1.1.2012: ");
 		System.out.println(band.getRepertoire(toDate(2012, 1, 1)));
 		System.out.println();
-		
+
 		song = band.getRepertoire().get(1);
 		band.getRepertoire().remove(song);
 		System.out.println("- " + song.toDetailString());
-		
+
 		System.out.println();
 		System.out.println("Repertoire: ");
 		System.out.println(band.getRepertoire());
 		System.out.println();
 	}
-	
+
 	private static void testeMitglieder() {
 		Mitglied mitglied;
 		Zeitraum zeitraum;
 		Band band = new Band("Green Day", "Rock");
 
 		zeitraum = new ZeitAb(toDate(1989, 3, 4));
-		mitglied = new Mitglied("Billie Joe Armstrong", "123/45678", "Gitarre", zeitraum);
+		mitglied = new Mitglied("Billie Joe Armstrong", "123/45678", "Gitarre",
+				zeitraum);
 		band.getMitglieder().add(mitglied);
 		System.out.println("+ " + mitglied.toDetailString());
 
@@ -176,7 +189,8 @@ public class Test {
 		System.out.println("+ " + mitglied.toDetailString());
 
 		zeitraum = new ZeitIntervall(toDate(1989, 3, 4), toDate(1990, 1, 1));
-		mitglied = new Mitglied("Al Sobrante", "345/54327", "Schlagzeug", zeitraum);
+		mitglied = new Mitglied("Al Sobrante", "345/54327", "Schlagzeug",
+				zeitraum);
 		band.getMitglieder().add(mitglied);
 		System.out.println("+ " + mitglied.toDetailString());
 
@@ -195,7 +209,7 @@ public class Test {
 		System.out.println("Mitglieder am 2.1.1990: ");
 		System.out.println(band.getMitglieder(toDate(1990, 1, 2)));
 		System.out.println();
-		
+
 		mitglied = band.getMitglieder().get(1);
 		band.getMitglieder().remove(mitglied);
 		System.out.println("- " + mitglied.toDetailString());

@@ -5,7 +5,7 @@ import java.util.Date;
  * Representiert einen Eindimensionalen Zeitabschnitt bestehend aus Anfang und
  * Ende mittels Date Object
  * 
- * @author Kögler Alexander
+ * @author Koegler Alexander
  * 
  */
 public class ZeitIntervall implements Zeitraum {
@@ -46,7 +46,7 @@ public class ZeitIntervall implements Zeitraum {
 
 	@Override
 	/**
-	 * Überprüft ob das Datum innerhalb des lokalen Intervalls liegt
+	 * ueberprueft ob das Datum innerhalb des lokalen Intervalls liegt
 	 * @param z Darf nicht null sein
 	 */
 	public boolean inZeitraum(Date z) {
@@ -55,7 +55,7 @@ public class ZeitIntervall implements Zeitraum {
 	
 	@Override
 	/**
-	 * Überprüft ob das Intervall innerhalb des lokalen Intervalls liegt
+	 * ueberprueft ob das Intervall innerhalb des lokalen Intervalls liegt
 	 * @param intervall Darf nicht null sein
 	 */
 	public boolean enthaelt(ZeitIntervall intervall) {

@@ -1,10 +1,10 @@
 import java.text.SimpleDateFormat;
 
 /**
- * Speichert Ort, Zeitraum, Dauer ab. Bietet Methoden für die kaufmännische
+ * Speichert Ort, Zeitraum, Dauer ab. Bietet Methoden fuer die kaufmaennische
  * Berechnungslehre.
  * 
- * @author Kögler Alexander
+ * @author Koegler Alexander
  * 
  */
 public abstract class Termin {
@@ -39,7 +39,7 @@ public abstract class Termin {
 	public abstract double getUmsatz();
 
 	/**
-	 * @return Gibt das lokale Zeitintervall zurück
+	 * @return Gibt das lokale Zeitintervall zurueck
 	 */
 	public ZeitIntervall getZeitIntervall() {
 		return zeitIntervall;

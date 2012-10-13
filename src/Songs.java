@@ -15,7 +15,7 @@ public class Songs extends ArrayList<Song> {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Gibt die Songs zurück, die zu dem Zeitpunkt <code>zeitpunkt</code> aktuell waren.
+	 * Gibt die Songs zurueck, die zu dem Zeitpunkt <code>zeitpunkt</code> aktuell waren.
 	 * 
 	 * @param zeitpunkt
 	 * @return

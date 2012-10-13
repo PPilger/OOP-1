@@ -15,7 +15,7 @@ public class Termine extends ArrayList<Termin> {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Gibt die Termine zurück, die in dem ZeitIntervall
+	 * Gibt die Termine zurueck, die in dem ZeitIntervall
 	 * <code>zeitIntervall</code> liegen.
 	 * 
 	 * @param zeitIntervall
@@ -34,8 +34,8 @@ public class Termine extends ArrayList<Termin> {
 	}
 
 	/**
-	 * Gibt alle Termine des übergebenen Typs <code>typ</code>, in dem
-	 * ZeitIntervall <code>zeitIntervall</code> liegen zurück.
+	 * Gibt alle Termine des uebergebenen Typs <code>typ</code>, in dem
+	 * ZeitIntervall <code>zeitIntervall</code> liegen zurueck.
 	 * 
 	 * @param typ
 	 * @param zeitIntervall

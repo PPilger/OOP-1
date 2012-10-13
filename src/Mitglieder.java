@@ -15,7 +15,7 @@ public class Mitglieder extends ArrayList<Mitglied> {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Gibt die Mitglieder zurück, die zu dem Zeitpunkt <code>zeitpunkt</code> bei der Band waren.
+	 * Gibt die Mitglieder zurueck, die zu dem Zeitpunkt <code>zeitpunkt</code> bei der Band waren.
 	 * 
 	 * @param zeitpunkt
 	 * @return

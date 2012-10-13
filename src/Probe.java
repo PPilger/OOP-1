@@ -1,7 +1,7 @@
 /**
  * Speichert die probenspezifischen Eigenschaften eines Termins ab.
  * 
- * @author Kögler Alexander
+ * @author Koegler Alexander
  * 
  */
 public class Probe extends Termin {
@@ -13,9 +13,9 @@ public class Probe extends Termin {
 	 * @param zeitIntervall
 	 *            ZeitIntervall
 	 * @param dauer
-	 *            Länge in ms.
+	 *            Laenge in ms.
 	 * @param raummiete
-	 *            Miete für Veranstaltung
+	 *            Miete fuer Veranstaltung
 	 */
 	public Probe(String ort, ZeitIntervall zeitIntervall, double raummiete) {
 		super(ort, zeitIntervall);
