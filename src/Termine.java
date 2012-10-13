@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 
 /**
@@ -22,8 +21,8 @@ public class Termine extends ArrayList<Termin> {
 	 * @param zeitIntervall
 	 * @return
 	 */
-	public Collection<Termin> list(Zeitraum zeitraum) {
-		Collection<Termin> ausgabe = new Termine();
+	public Termine list(Zeitraum zeitraum) {
+		Termine ausgabe = new Termine();
 
 		for (Termin termin : this) {
 			if (zeitraum.enthaelt(termin.getZeitIntervall())) {
@@ -42,9 +41,8 @@ public class Termine extends ArrayList<Termin> {
 	 * @param zeitIntervall
 	 * @return
 	 */
-	public Collection<Termin> list(Class<? extends Termin> typ,
-			Zeitraum zeitraum) {
-		Collection<Termin> liste = list(zeitraum);
+	public Termine list(Class<? extends Termin> typ, Zeitraum zeitraum) {
+		Termine liste = list(zeitraum);
 
 		Iterator<Termin> iter = liste.iterator();
 		while (iter.hasNext()) {
@@ -55,6 +53,23 @@ public class Termine extends ArrayList<Termin> {
 		}
 
 		return liste;
+	}
+
+	/**
+	 * Gibt den Gewinn aller Termine die zum Zeitpunkt <code>zeitpunkt</code>
+	 * gültig sind zurück.
+	 * 
+	 * @param zeitpunkt
+	 * @return
+	 */
+	public double getGewinn(Zeitraum zeitraum) {
+		double gewinn = 0;
+
+		for (Termin termin : list(zeitraum)) {
+			gewinn += termin.getGewinn();
+		}
+
+		return gewinn;
 	}
 
 	/**
@@ -70,6 +85,23 @@ public class Termine extends ArrayList<Termin> {
 
 		for (Termin termin : list(typ, zeitraum)) {
 			gewinn += termin.getGewinn();
+		}
+
+		return gewinn;
+	}
+
+	/**
+	 * Gibt die Kosten aller Termine die zum Zeitpunkt <code>zeitpunkt</code>
+	 * gültig sind zurück.
+	 * 
+	 * @param zeitpunkt
+	 * @return
+	 */
+	public double getKosten(Zeitraum zeitraum) {
+		double gewinn = 0;
+
+		for (Termin termin : list(zeitraum)) {
+			gewinn += termin.getKosten();
 		}
 
 		return gewinn;

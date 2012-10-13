@@ -71,8 +71,9 @@ public class Test {
 		}
 		System.out.println(band.getTermine());
 
-		kalender.set(2012, Calendar.OCTOBER, 12);
+		kalender.set(2012, Calendar.OCTOBER, 11);
 		System.out.println(band.getTermine().list(
 				new ZeitAb(kalender.getTime())));
+		System.out.println(band.getTermine().getKosten(new ZeitAb(kalender.getTime())));
 	}
 }
