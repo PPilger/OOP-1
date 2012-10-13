@@ -12,15 +12,15 @@ public class Auftritt extends Termin {
 	 * 
 	 * @param ort
 	 *            Ort
-	 * @param zeitraum
-	 *            Zeitraum
+	 * @param zeitIntervall
+	 *            ZeitIntervall
 	 * @param dauer
 	 *            Länge in ms.
 	 * @param gage
 	 *            Gage
 	 */
-	public Auftritt(String ort, Zeitraum zeitraum, double gage) {
-		super(ort, zeitraum);
+	public Auftritt(String ort, ZeitIntervall zeitIntervall, double gage) {
+		super(ort, zeitIntervall);
 		this.gage = gage;
 	}
 

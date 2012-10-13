@@ -12,6 +12,11 @@ public class ZeitAb implements Zeitraum {
 	public boolean inZeitraum(Date zeitpunkt) {
 		return !von.after(zeitpunkt);
 	}
+	
+	@Override
+	public boolean enthaelt(ZeitIntervall intervall) {
+		return !intervall.getVon().before(von);
+	}
 
 	@Override
 	public String toString() {

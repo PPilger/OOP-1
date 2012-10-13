@@ -15,5 +15,7 @@ public interface Zeitraum {
 	 */
 	public boolean inZeitraum(Date z);
 	
+	public boolean enthaelt(ZeitIntervall intervall);
+	
 	public String toString(DateFormat df);
 }

@@ -32,6 +32,17 @@ public class ZeitIntervall implements Zeitraum {
 			this.bis = grenze2;
 		}
 	}
+	
+
+	public Date getVon() {
+		return von;
+	}
+
+
+	public Date getBis() {
+		return bis;
+	}
+
 
 	@Override
 	/**
@@ -40,6 +51,12 @@ public class ZeitIntervall implements Zeitraum {
 	 */
 	public boolean inZeitraum(Date z) {
 		return !(this.von.after(z) || this.bis.before(z));
+	}
+	
+	@Override
+	public boolean enthaelt(ZeitIntervall intervall) {
+		//TODO: Bitte wieder deinen Intervallüberprüfungscode einfügen^^ (ich hab mir jetzt nochmal die angabe durchgelesen)
+		return false;
 	}
 
 	@Override

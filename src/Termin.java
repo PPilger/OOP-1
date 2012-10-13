@@ -7,15 +7,15 @@ import java.text.SimpleDateFormat;
  * @author Kögler Alexander
  * 
  */
-public abstract class Termin implements HatZeitraum {
+public abstract class Termin {
 
-	public Termin(String ort, Zeitraum zeitraum) {
+	public Termin(String ort, ZeitIntervall zeitIntervall) {
 		this.ort = ort;
-		this.zeitraum = zeitraum;
+		this.zeitIntervall = zeitIntervall;
 	}
 
 	private String ort;
-	private Zeitraum zeitraum;
+	private ZeitIntervall zeitIntervall;
 
 	/**
 	 * 
@@ -41,14 +41,14 @@ public abstract class Termin implements HatZeitraum {
 	/**
 	 * @return Gibt das lokale Zeitintervall zurück
 	 */
-	public Zeitraum getZeitraum() {
-		return zeitraum;
+	public ZeitIntervall getZeitIntervall() {
+		return zeitIntervall;
 	}
 
 	@Override
 	public String toString() {
 		return ort + " "
-				+ zeitraum.toString(new SimpleDateFormat("dd.MM.yyyy hh:mm"));
+				+ zeitIntervall.toString(new SimpleDateFormat("dd.MM.yyyy hh:mm"));
 	}
 
 	public abstract String toDetailString();

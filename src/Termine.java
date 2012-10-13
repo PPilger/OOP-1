@@ -1,5 +1,5 @@
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.Iterator;
 
 /**
@@ -8,7 +8,7 @@ import java.util.Iterator;
  * @author Peter Pilgerstorfer
  * 
  */
-public class Termine extends HatZeitraumCollection<Termin> {
+public class Termine extends ArrayList<Termin> {
 
 	/**
 	 * Serialisierungs ID
@@ -16,15 +16,35 @@ public class Termine extends HatZeitraumCollection<Termin> {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Gibt alle Termine des übergebenen Typs <code>typ</code>, die zum
-	 * Zeitpunkt <code>zeitpunkt</code> gültig sind zurück.
+	 * Gibt die Termine zurück, die in dem ZeitIntervall
+	 * <code>zeitIntervall</code> liegen.
 	 * 
-	 * @param typ
-	 * @param zeitpunkt
+	 * @param zeitIntervall
 	 * @return
 	 */
-	public Collection<Termin> list(Class<? extends Termin> typ, Date zeitpunkt) {
-		Collection<Termin> liste = list(zeitpunkt);
+	public Collection<Termin> list(Zeitraum zeitraum) {
+		Collection<Termin> ausgabe = new Termine();
+
+		for (Termin termin : this) {
+			if (zeitraum.enthaelt(termin.getZeitIntervall())) {
+				ausgabe.add(termin);
+			}
+		}
+
+		return ausgabe;
+	}
+
+	/**
+	 * Gibt alle Termine des übergebenen Typs <code>typ</code>, in dem
+	 * ZeitIntervall <code>zeitIntervall</code> liegen zurück.
+	 * 
+	 * @param typ
+	 * @param zeitIntervall
+	 * @return
+	 */
+	public Collection<Termin> list(Class<? extends Termin> typ,
+			Zeitraum zeitraum) {
+		Collection<Termin> liste = list(zeitraum);
 
 		Iterator<Termin> iter = liste.iterator();
 		while (iter.hasNext()) {
@@ -45,10 +65,10 @@ public class Termine extends HatZeitraumCollection<Termin> {
 	 * @param zeitpunkt
 	 * @return
 	 */
-	public double getGewinn(Class<? extends Termin> typ, Date zeitpunkt) {
+	public double getGewinn(Class<? extends Termin> typ, Zeitraum zeitraum) {
 		double gewinn = 0;
 
-		for (Termin termin : list(typ, zeitpunkt)) {
+		for (Termin termin : list(typ, zeitraum)) {
 			gewinn += termin.getGewinn();
 		}
 
@@ -63,10 +83,10 @@ public class Termine extends HatZeitraumCollection<Termin> {
 	 * @param zeitpunkt
 	 * @return
 	 */
-	public double getKosten(Class<? extends Termin> typ, Date zeitpunkt) {
+	public double getKosten(Class<? extends Termin> typ, Zeitraum zeitraum) {
 		double kosten = 0;
 
-		for (Termin termin : list(typ, zeitpunkt)) {
+		for (Termin termin : list(typ, zeitraum)) {
 			kosten += termin.getKosten();
 		}
 

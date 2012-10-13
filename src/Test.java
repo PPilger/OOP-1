@@ -5,12 +5,13 @@ public class Test {
 	public static void main(String[] args) {
 		Calendar kalender = Calendar.getInstance();
 		Zeitraum zeitraum;
+		ZeitIntervall zeitIntervall;
 
 		Band band = new Band("Green Day", "Rock");
 
 		{
 			Mitglied mitglied;
-			
+
 			kalender.set(1987, 7, 5);
 			zeitraum = new ZeitAb(kalender.getTime());
 			mitglied = new Mitglied("Billie Joe Armstrong", "31/2345",
@@ -33,7 +34,7 @@ public class Test {
 
 		{
 			Song song;
-			
+
 			kalender.set(1990, 1, 1);
 			zeitraum = new ZeitAb(kalender.getTime());
 			song = new Song("Holiday", 200, zeitraum);
@@ -45,7 +46,7 @@ public class Test {
 			zeitraum = new ZeitAb(kalender.getTime());
 			song = new Song("Basketcase", 195, zeitraum);
 			band.getRepertoire().add(song);
-			
+
 			System.out.println("+ " + song.toDetailString());
 
 		}
@@ -53,24 +54,25 @@ public class Test {
 
 		{
 			Termin termin;
-			
+
 			kalender.set(2012, Calendar.OCTOBER, 11, 10, 15);
-			zeitraum = new ZeitAb(kalender.getTime());
-			termin = new Probe("Zu Hause", zeitraum, 100);
+			zeitIntervall = new ZeitIntervall(kalender.getTime(), new Date());
+			termin = new Probe("Zu Hause", zeitIntervall, 100);
 			band.getTermine().add(termin);
-			
+
 			System.out.println("+ " + termin.toDetailString());
 
 			kalender.set(2012, Calendar.OCTOBER, 10);
-			zeitraum = new ZeitIntervall(kalender.getTime(), new Date());
-			termin = new Auftritt("Ernst Happel Stadion", zeitraum, 100000);
+			zeitIntervall = new ZeitIntervall(kalender.getTime(), new Date());
+			termin = new Auftritt("Ernst Happel Stadion", zeitIntervall, 100000);
 			band.getTermine().add(termin);
-			
+
 			System.out.println("+ " + termin.toDetailString());
 		}
 		System.out.println(band.getTermine());
 
 		kalender.set(2012, Calendar.OCTOBER, 12);
-		System.out.println(band.getTermine().list(kalender.getTime()));
+		System.out.println(band.getTermine().list(
+				new ZeitAb(kalender.getTime())));
 	}
 }

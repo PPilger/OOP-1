@@ -10,15 +10,15 @@ public class Probe extends Termin {
 	 * 
 	 * @param ort
 	 *            Ort
-	 * @param zeitraum
-	 *            Zeitraum
+	 * @param zeitIntervall
+	 *            ZeitIntervall
 	 * @param dauer
 	 *            Länge in ms.
 	 * @param raummiete
 	 *            Miete für Veranstaltung
 	 */
-	public Probe(String ort, Zeitraum zeitraum, double raummiete) {
-		super(ort, zeitraum);
+	public Probe(String ort, ZeitIntervall zeitIntervall, double raummiete) {
+		super(ort, zeitIntervall);
 		this.raummiete = raummiete;
 	}
 
