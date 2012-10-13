@@ -30,7 +30,7 @@ public class Test {
 		System.out.println(band.getMitglieder());
 
 		kalender.set(1987, 7, 4);
-		System.out.println(band.getMitglieder().list(kalender.getTime()));
+		System.out.println(band.getMitglieder(kalender.getTime()));
 
 		{
 			Song song;
@@ -72,8 +72,7 @@ public class Test {
 		System.out.println(band.getTermine());
 
 		kalender.set(2012, Calendar.OCTOBER, 11);
-		System.out.println(band.getTermine().list(
-				new ZeitAb(kalender.getTime())));
-		System.out.println(band.getTermine().getKosten(new ZeitAb(kalender.getTime())));
+		System.out.println(band.getTermine(new ZeitAb(kalender.getTime())));
+		System.out.println(band.getTermine(new ZeitAb(kalender.getTime())).getKosten());
 	}
 }

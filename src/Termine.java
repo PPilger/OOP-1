@@ -56,16 +56,15 @@ public class Termine extends ArrayList<Termin> {
 	}
 
 	/**
-	 * Gibt den Gewinn aller Termine die zum Zeitpunkt <code>zeitpunkt</code>
-	 * gültig sind zurück.
+	 * Berechnet den Gewinn aller Termine.
 	 * 
 	 * @param zeitpunkt
-	 * @return
+	 * @return der Gewinn
 	 */
-	public double getGewinn(Zeitraum zeitraum) {
+	public double getGewinn() {
 		double gewinn = 0;
 
-		for (Termin termin : list(zeitraum)) {
+		for (Termin termin : this) {
 			gewinn += termin.getGewinn();
 		}
 
@@ -73,55 +72,18 @@ public class Termine extends ArrayList<Termin> {
 	}
 
 	/**
-	 * Gibt den Gewinn aller Termine des übergebenen Typs <code>typ</code>, die
-	 * zum Zeitpunkt <code>zeitpunkt</code> gültig sind zurück.
-	 * 
-	 * @param typ
-	 * @param zeitpunkt
-	 * @return
-	 */
-	public double getGewinn(Class<? extends Termin> typ, Zeitraum zeitraum) {
-		double gewinn = 0;
-
-		for (Termin termin : list(typ, zeitraum)) {
-			gewinn += termin.getGewinn();
-		}
-
-		return gewinn;
-	}
-
-	/**
-	 * Gibt die Kosten aller Termine die zum Zeitpunkt <code>zeitpunkt</code>
-	 * gültig sind zurück.
+	 * Berechnet die Kosten aller Termine.
 	 * 
 	 * @param zeitpunkt
-	 * @return
+	 * @return die Kosten
 	 */
-	public double getKosten(Zeitraum zeitraum) {
+	public double getKosten() {
 		double gewinn = 0;
 
-		for (Termin termin : list(zeitraum)) {
+		for (Termin termin : this) {
 			gewinn += termin.getKosten();
 		}
 
 		return gewinn;
-	}
-
-	/**
-	 * Gibt die Kosten aller Termine des übergebenen Typs <code>typ</code>, die
-	 * zum Zeitpunkt <code>zeitpunkt</code> gültig sind zurück.
-	 * 
-	 * @param typ
-	 * @param zeitpunkt
-	 * @return
-	 */
-	public double getKosten(Class<? extends Termin> typ, Zeitraum zeitraum) {
-		double kosten = 0;
-
-		for (Termin termin : list(typ, zeitraum)) {
-			kosten += termin.getKosten();
-		}
-
-		return kosten;
 	}
 }

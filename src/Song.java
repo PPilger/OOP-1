@@ -4,7 +4,7 @@
  * @author Christian Kletzander
  * 
  */
-public class Song implements HatZeitraum {
+public class Song {
 
 	private String name;
 	private int laenge;
@@ -17,7 +17,6 @@ public class Song implements HatZeitraum {
 		this.zeitraum = zeitraum;
 	}
 
-	@Override
 	public Zeitraum getZeitraum() {
 		return this.zeitraum;
 	}

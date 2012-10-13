@@ -3,7 +3,7 @@
  * @author Christian Kletzander
  * 
  */
-public class Mitglied implements HatZeitraum {
+public class Mitglied {
 
 	// Variablendefinition
 	private String name;
@@ -20,7 +20,6 @@ public class Mitglied implements HatZeitraum {
 		this.zeitraum = zeitraum;
 	}
 
-	@Override
 	public Zeitraum getZeitraum() {
 		return this.zeitraum;
 	}
