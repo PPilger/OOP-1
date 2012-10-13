@@ -47,16 +47,22 @@ public class ZeitIntervall implements Zeitraum {
 	@Override
 	/**
 	 * Überprüft ob das Datum innerhalb des lokalen Intervalls liegt
-	 * @param Darf nicht null sein
+	 * @param z Darf nicht null sein
 	 */
 	public boolean inZeitraum(Date z) {
 		return !(this.von.after(z) || this.bis.before(z));
 	}
 	
 	@Override
+	/**
+	 * Überprüft ob das Datum innerhalb des lokalen Intervalls liegt
+	 * @param intervall Darf nicht null sein
+	 */
 	public boolean enthaelt(ZeitIntervall intervall) {
-		//TODO: Bitte wieder deinen Intervallüberprüfungscode einfügen^^ (ich hab mir jetzt nochmal die angabe durchgelesen)
-		return false;
+		if (intervall.bis.before(this.von) || intervall.von.after(this.bis)) {
+			return false;
+		}
+		return true;
 	}
 
 	@Override
