@@ -44,7 +44,6 @@ public class ZeitIntervall implements Zeitraum {
 	}
 
 
-	@Override
 	/**
 	 * Überprüft ob das Datum innerhalb des lokalen Intervalls liegt
 	 * @param z Darf nicht null sein
@@ -53,13 +52,13 @@ public class ZeitIntervall implements Zeitraum {
 		return !(this.von.after(z) || this.bis.before(z));
 	}
 	
-	@Override
+	
 	/**
-	 * Überprüft ob das Datum innerhalb des lokalen Intervalls liegt
+	 * Überprüft ob das übergebene Intervall innerhalb des lokalen Intervalls liegt
 	 * @param intervall Darf nicht null sein
 	 */
 	public boolean enthaelt(ZeitIntervall intervall) {
-		if (intervall.bis.before(this.von) || intervall.von.after(this.bis)) {
+		if (intervall.von.before(this.von) || intervall.bis.after(this.bis)) {
 			return false;
 		}
 		return true;
@@ -70,7 +69,6 @@ public class ZeitIntervall implements Zeitraum {
 		return toString(DateFormat.getDateInstance());
 	}
 
-	@Override
 	public String toString(DateFormat format) {
 		return "[" + format.format(von) + " - " + format.format(bis) + "]";
 	}
