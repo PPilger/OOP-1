@@ -5,6 +5,7 @@
  * 
  */
 public class Probe extends Termin {
+	private double raummiete;
 
 	/**
 	 * 
@@ -21,8 +22,6 @@ public class Probe extends Termin {
 		super(ort, zeitIntervall);
 		this.raummiete = raummiete;
 	}
-
-	private double raummiete;
 
 	@Override
 	/**

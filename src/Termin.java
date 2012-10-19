@@ -8,14 +8,13 @@ import java.text.SimpleDateFormat;
  * 
  */
 public abstract class Termin {
+	private String ort;
+	private ZeitIntervall zeitIntervall;
 
 	public Termin(String ort, ZeitIntervall zeitIntervall) {
 		this.ort = ort;
 		this.zeitIntervall = zeitIntervall;
 	}
-
-	private String ort;
-	private ZeitIntervall zeitIntervall;
 
 	/**
 	 * 
@@ -37,6 +36,14 @@ public abstract class Termin {
 	 * @return Umsatz
 	 */
 	public abstract double getUmsatz();
+	
+	/**
+	 * Berechnet die Dauer des Termins
+	 * @return die Dauer in Sekunden
+	 */
+	public int getDauer() {
+		return (int) ((zeitIntervall.getBis().getTime() - zeitIntervall.getVon().getTime()) / 1000);
+	}
 
 	/**
 	 * @return Gibt das lokale Zeitintervall zurueck

@@ -5,7 +5,6 @@
  * 
  */
 public class Auftritt extends Termin {
-
 	private double gage;
 
 	/**

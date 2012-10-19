@@ -40,8 +40,12 @@ public class Band {
 		return this.termine.list(zeitraum);
 	}
 
-	public Termine getTermine(Class<? extends Termin> typ, Zeitraum zeitraum) {
-		return this.termine.list(typ, zeitraum);
+	public Termine getProben(Zeitraum zeitraum) {
+		return this.termine.listProben(zeitraum);
+	}
+	
+	public Termine getAuftritte(Zeitraum zeitraum) {
+		return this.termine.listAuftritte(zeitraum);
 	}
 
 	public Mitglieder getMitglieder() {

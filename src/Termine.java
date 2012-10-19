@@ -34,19 +34,44 @@ public class Termine extends ArrayList<Termin> {
 	}
 
 	/**
-	 * Gibt alle Termine des uebergebenen Typs <code>typ</code>, in dem
+	 * Gibt alle Proben die in dem ZeitIntervall <code>zeitIntervall</code>
+	 * liegen zurueck.
+	 * 
+	 * @param typ
+	 * @param zeitIntervall
+	 * @return
+	 */
+	public Termine listProben(Zeitraum zeitraum) {
+		return list(Probe.class, zeitraum);
+	}
+
+	/**
+	 * Gibt alle Auftritte die in dem ZeitIntervall <code>zeitIntervall</code>
+	 * liegen zurueck.
+	 * 
+	 * @param typ
+	 * @param zeitIntervall
+	 * @return
+	 */
+	public Termine listAuftritte(Zeitraum zeitraum) {
+		return list(Auftritt.class, zeitraum);
+	}
+
+	/**
+	 * Gibt alle Termine des uebergebenen Typs <code>typ</code> die in dem
 	 * ZeitIntervall <code>zeitIntervall</code> liegen zurueck.
 	 * 
 	 * @param typ
 	 * @param zeitIntervall
 	 * @return
 	 */
-	public Termine list(Class<? extends Termin> typ, Zeitraum zeitraum) {
+	private Termine list(Class<? extends Termin> typ, Zeitraum zeitraum) {
 		Termine liste = list(zeitraum);
-
 		Iterator<Termin> iter = liste.iterator();
+		
 		while (iter.hasNext()) {
 			Termin termin = iter.next();
+			
 			if (!termin.getClass().equals(typ)) {
 				iter.remove();
 			}
